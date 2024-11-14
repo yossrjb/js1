@@ -1,0 +1,59 @@
+Find the Smallest and Biggest Numbers
+****function minMax(arr) {
+    const min = Math.min(...arr);
+    const max = Math.max(...arr);
+    return [min, max];
+}
+
+****Sum of Cubes
+function sumOfCubes(arr) {
+    return arr.reduce((sum, num) => sum + Math.pow(num, 3), 0);
+}
+*****filter out strings from the array
+function filterArray(arr) {
+    return arr.filter(item => typeof item === 'number');
+}
+****is the number symmetrical?
+function isSymmetrical(num) {
+    const strNum = num.toString();
+    const reversedStrNum = strNum.split('').reverse().join('');
+    return strNum === reversedStrNum;
+}
+*****Special arrays
+function isSpecialArray(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        if ((i % 2 === 0 && arr[i] % 2 !== 0) || (i % 2 !== 0 && arr[i] % 2 === 0)) {
+            return false;
+        }
+    }
+    return true;
+}
+
+****How much is true?
+function countTrue(arr) {
+    return arr.filter(Boolean).length;
+}
+****convert key,values in an object to array
+function objectToArray(obj) {
+    return Object.entries(obj);
+}
+*****array of multiples 
+function arrayOfMultiples(num, length) {
+    let result = [];
+    for (let i = 1; i <= length; i++) {
+        result.push(num * i);
+    }
+    return result;
+}
+******25 mile marathon
+function marathonDistance(distances) {
+    if (!distances || distances.length === 0) {
+        return false;
+    }
+    const totalDistance = distances.reduce((sum, distance) => sum + Math.abs(distance), 0);
+    return totalDistance === 25;
+}
+****square every digit
+function squareDigits(num) {
+    return parseInt(num.toString().split('').map(digit => Math.pow(parseInt(digit), 2)).join(''));
+}
